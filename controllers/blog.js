@@ -26,8 +26,26 @@ router.get('/:id', (req, res) => {
   })
 })
 // update a blog by id: '/:id'
+router.get('/edit/:id', (req, res) => {
+  Blog.findOne({ _id: req.params.id }).then(blog => {
+    res.render('blog/edit', blog)
+  })
+})
+
+router.put('/:id', (req, res) => {
+  Blog.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }).then(
+    Blog => {
+      res.redirect('/')
+    }
+  )
+})
 
 // delete a blog by id: '/:id'
+router.delete('/:id', (req, res) => {
+  Blog.findOneAndRemove({ _id: req.params.id }).then(() => {
+    res.redirect('/')
+  })
+})
 
 // export our router (then import in index.js)
 module.exports = router

@@ -5,13 +5,14 @@ const favicon = require('serve-favicon')
 const logger = require('morgan')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
-// const methodOverride =  (DO THIS)
+const methodOverride = require('method-override')
 
 const Blog = require('./models/Blog')
 const blogController = require('./controllers/blog')
 
 const app = express()
 
+app.use(methodOverride('_method'))
 // view engine setup
 // app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs')
