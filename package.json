@@ -2,7 +2,10 @@
   "name": "fortniteblog",
   "version": "0.0.0",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
   "dependencies": {
     "body-parser": "^1.18.2",
     "cookie-parser": "~1.4.3",
