@@ -1,33 +1,33 @@
 // importing our dependencies
 const express = require('express')
 const router = express.Router()
-const Joke = require('../models/Joke')
+const Blog = require('../models/Blog')
 
 // define our routes
 
-// get all jokes: '/'
+// get all blog posts: '/'
 
-// create new joke: '/'
+// create new blog: '/'
 router.post('/', (req, res) => {
-  Joke.create(req.body).then(joke => {
-    res.redirect(`/jokes/${joke.id}`)
+  Blog.create(req.body).then(blog => {
+    res.redirect(`/blog/${blog.id}`)
   })
 })
 
-// get new view for a new joke
+// get new view for a new blog
 router.get('/new', (req, res) => {
-  res.render('joke/new')
+  res.render('blog/new')
 })
 
-// get a joke by it's id: '/:id'
+// get a blog by it's id: '/:id'
 router.get('/:id', (req, res) => {
-  Joke.findOne({ _id: req.params.id }).then(joke => {
-    res.render('joke/show', joke)
+  Blog.findOne({ _id: req.params.id }).then(blog => {
+    res.render('blog/show', blog)
   })
 })
-// update a joke by id: '/:id'
+// update a blog by id: '/:id'
 
-// delete a joke by id: '/:id'
+// delete a blog by id: '/:id'
 
 // export our router (then import in index.js)
 module.exports = router

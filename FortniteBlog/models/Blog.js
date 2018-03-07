@@ -25,5 +25,5 @@ const BlogSchema = new mongoose.Schema({
 // Giving mongoose the schema to build the model
 const Blog = mongoose.model('Blog', BlogSchema)
 
-// exporting the Joke model
+// exporting the Blog model
 module.exports = Blog

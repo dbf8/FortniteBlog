@@ -3,8 +3,9 @@ const Blog = require('../models/Blog')
 Blog.remove({}).then(() => {
   Promise.all([
     Blog.create({
-      title: 'Why did the golfer wear 2 pairs of pants?',
-      writeup: 'In case he got a hole in one',
+      title: 'A Fortnite of Fortnite',
+      writeup:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum commodo rhoncus. Quisque fermentum quam ornare, pellentesque nunc non, tincidunt diam. Nulla auctor felis leo. Morbi pharetra rutrum leo vitae facilisis. Curabitur quis odio vel orci molestie aliquam. Duis elementum diam id nibh cursus eleifend. Integer porta metus quam, id maximus odio pretium vel. Aenean auctor, ligula nec accumsan molestie, lacus justo fringilla felis, eu fringilla mauris eros ac dolor. Fusce cursus nulla non ex varius pretium. Mauris ut bibendum orci.',
       video: ''
     })
   ]).then(() => {
