@@ -2,30 +2,27 @@
     <div class="grid-x align-center">
         <div class="cell medium-8">
             <div class="blog-post">
-                <h3>
-                    {{title}}
-                </h3>
-
+                <h3>{{title}}</h3>
                 <p>{{writeup}}</p>
                 <iframe width="550" height="315" src="https://www.youtube.com/embed/{{  youtubevideo }}" frameborder="0" allow="autoplay; encrypted-media"
                     allowfullscreen> </iframe>
                 <div class="callout">
                     <ul class="menu simple">
+                        <li>{{createdAt}}</li>
                         <li>
-                            {{createdAt}}
+                            <a href="#" class="author">{{author}}</a>
                         </li>
-                        <li>
-                            <a href="#">{{author}}</a>
-                        </li>
-                        <li>
-                            <form action="/blog/edit/{{id}}" method="GET">
-                                <input type="submit" value="Edit"> </form>
-                        </li>
-                        <li>
-                            <form onsubmit="return confirmDelete()" method="POST" action="/blog/{{id}}?_method=delete">
-                                <input type="submit" value="Remove">
-                            </form>
-                        </li>
+                        <div class="buttondisplay">
+                            <li>
+                                <form action="/blog/edit/{{id}}" method="GET">
+                                    <input type="submit" value="Edit"> </form>
+                            </li>
+                            <li>
+                                <form onsubmit="return confirmDelete()" method="POST" action="/blog/{{id}}?_method=delete">
+                                    <input type="submit" value="Remove">
+                                </form>
+                            </li>
+                        </div>
                     </ul>
                 </div>
             </div>

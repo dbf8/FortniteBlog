@@ -22,17 +22,19 @@
                             {{createdAt}}
                         </li>
                         <li>
-                            <a href="#">{{author}}</a>
+                            <a href="#" class="author">{{author}}</a>
                         </li>
-                        <li>
-                            <form action="/blog/edit/{{id}}" method="GET">
-                                <input type="submit" value="Edit"> </form>
-                        </li>
-                        <li>
-                            <form onsubmit="return confirmDelete()" method="POST" action="/blog/{{id}}?_method=delete">
-                                <input type="submit" value="Remove">
-                            </form>
-                        </li>
+                        <div class="buttondisplay">
+                            <li>
+                                <form action="/blog/edit/{{id}}" method="GET">
+                                    <input type="submit" value="Edit"> </form>
+                            </li>
+                            <li>
+                                <form onsubmit="return confirmDelete()" method="POST" action="/blog/{{id}}?_method=delete">
+                                    <input type="submit" value="Remove">
+                                </form>
+                            </li>
+                        </div>
                     </ul>
                 </div>
             </div>

@@ -3,7 +3,10 @@
         <form action="/blog/{{id}}?_method=put" method="post">
             <input type="text" name="title" value="{{title}}">
             <textarea rows="10" cols="30" type="text" name="writeup"> {{writeup}} </textarea>
-            <input type="text" name="youtubevideo " value="{{youtubevideo}}">
+            <div class="leftright">
+                <input class="videoauthor" type="text" name="youtubevideo" value="{{youtubevideo}}">
+                <input class="videoauthor" type="text" name="author" value="{{author}}">
+            </div>
             <input type="submit" value="Save">
         </form>
     </div>

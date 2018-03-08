@@ -4,7 +4,10 @@
         <form action="/blog" method="post">
             <input type="text" name="title" placeholder="title">
             <textarea rows="10" cols="30" type="text" name="writeup" placeholder="Write Up / Content"> </textarea>
-            <input type="text" name="youtubevideo" placeholder="Youtube Video Link (anything after the /). This Field is Required.">
+            <div class="leftright">
+                <input class="videoauthor" type="text" name="youtubevideo" placeholder="Youtube Video Link (anything after the /). This Field is Required.">
+                <input class="videoauthor" type="text" name="author" placeholder="Author">
+            </div>
             <input type="submit" value="Save">
         </form>
     </div>

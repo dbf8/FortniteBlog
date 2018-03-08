@@ -13,6 +13,7 @@ const blogController = require('./controllers/blog')
 const app = express()
 
 app.use(methodOverride('_method'))
+
 // view engine setup
 app.set('view engine', 'hbs')
 
@@ -22,9 +23,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
-
-// app.use('/', index)
-// app.use('/users', users)
 
 app.get('/', (req, res) => {
   Blog.find({})
@@ -37,7 +35,7 @@ app.get('/', (req, res) => {
 
 app.use('/blog', blogController)
 
-// catch 404 and forward to error handler
+// catch 404 and forward to error handler everything until the app.set was automatically configured with the express generator
 app.use((req, res, next) => {
   const err = new Error('Not Found')
   err.status = 404

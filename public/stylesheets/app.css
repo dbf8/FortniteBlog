@@ -31,3 +31,20 @@ iframe {
   /* padding: 20px; */
   float: right;
 }
+
+.leftright {
+  display: flex;
+}
+
+.author {
+  text-decoration: none;
+  color: Black;
+}
+
+.buttondisplay {
+  display: flex;
+}
+
+.videoauthor {
+  margin: 0px 10px 10px 10px;
+}
