@@ -18,18 +18,19 @@
                 <div class="callout">
                     <ul class="menu simple">
                         <li>
+                            {{createdAt}}
+                        </li>
+                        <li>
                             <a href="#">{{author}}</a>
                         </li>
                         <li>
-                            <a href="/blog/edit/{{id}}" ; class="edit">Edit</a>
+                            <form action="/blog/edit/{{id}}" method="GET">
+                                <input type="submit" value="Edit"> </form>
                         </li>
                         <li>
-                            <form action="/blog/{{id}}?_method=delete" method="post">
-                                <input type="submit" value="remove">
+                            <form onsubmit="return confirmDelete()" method="POST" action="/blog/{{id}}?_method=delete">
+                                <input type="submit" value="Remove">
                             </form>
-                        </li>
-                        <li>
-                            {{createdAt}}
                         </li>
                     </ul>
                 </div>

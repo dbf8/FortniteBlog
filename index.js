@@ -27,9 +27,12 @@ app.use(express.static(path.join(__dirname, 'public')))
 // app.use('/users', users)
 
 app.get('/', (req, res) => {
-  Blog.find({}).then(blog => {
-    res.render('index', { blog })
-  })
+  Blog.find({})
+    // finally got sorting correct!
+    .sort([['_id', -1]])
+    .then(blog => {
+      res.render('index', { blog })
+    })
 })
 
 app.use('/blog', blogController)

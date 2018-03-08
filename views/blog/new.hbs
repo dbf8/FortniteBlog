@@ -1,8 +1,11 @@
-<h2>New Blog Post!:</h2>
-
-<form action="/blog" method="post">
-    <input type="text" name="title" placeholder="title">
-    <input style="height:200px;font-size:14pt;" type="text" name="writeup" placeholder="Write Up / Content">
-    <input type="text" name="youtubevideo" placeholder="Youtube Video">
-    <input type="submit" value="Save">
-</form>
+<div class="grid-x align-center">
+    <div class="cell medium-8">
+        <h2>New Blog Post!:</h2>
+        <form action="/blog" method="post">
+            <input type="text" name="title" placeholder="title">
+            <textarea rows="10" cols="30" type="text" name="writeup" placeholder="Write Up / Content"> </textarea>
+            <input type="text" name="youtubevideo" placeholder="Youtube Video Link (anything after the /). This Field is Required.">
+            <input type="submit" value="Save">
+        </form>
+    </div>
+</div>

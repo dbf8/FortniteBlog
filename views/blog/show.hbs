@@ -1,4 +1,19 @@
-<h1>{{title}}</h1>
-<p>{{writeup}}</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/{{  youtubevideo }}" frameborder="0" allow="autoplay; encrypted-media"
-    allowfullscreen> </iframe>
+<div class="grid-x align-center">
+    <div class="cell medium-8">
+        <h1>{{title}}</h1>
+        <p>{{writeup}}</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{  youtubevideo }}" frameborder="0" allow="autoplay; encrypted-media"
+            allowfullscreen> </iframe>
+        <ul class="menu simple showpage">
+            <li>
+                <form action="/blog/edit/{{id}}" method="GET">
+                    <input type="submit" value="Edit"> </form>
+            </li>
+            <li>
+                <form onsubmit="return confirmDelete()" method="POST" action="/blog/{{id}}?_method=delete">
+                    <input type="submit" value="Remove">
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>

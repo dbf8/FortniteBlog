@@ -1,8 +1,10 @@
-<form action="/blog/{{id}}?_method=put" method="post">
-    <input type="text" name="title" value="{{title}}">
-    <input style="height:200px;font-size:14pt;" type="text" name="writeup" value="{{writeup}}">
-    <input type="text" name="youtubevideo" value="{{youtubevideo}}">
-    <input type="submit" value="Save">
-</form>
-
-// I want to add the original text to edit here... so need to figure out how to do that. probably with "placeholders????????"
+<div class="grid-x align-center">
+    <div class="cell medium-8">
+        <form action="/blog/{{id}}?_method=put" method="post">
+            <input type="text" name="title" value="{{title}}">
+            <textarea rows="10" cols="30" type="text" name="writeup"> {{writeup}} </textarea>
+            <input type="text" name="youtubevideo " value="{{youtubevideo}}">
+            <input type="submit" value="Save">
+        </form>
+    </div>
+</div>

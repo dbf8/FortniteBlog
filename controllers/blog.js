@@ -35,7 +35,8 @@ router.get('/edit/:id', (req, res) => {
 router.put('/:id', (req, res) => {
   Blog.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }).then(
     Blog => {
-      res.redirect(`/blog/${blog.id}`)
+      //this breaks when i make it /blog/${blog.id} and I have no idea why
+      res.redirect(`/`)
     }
   )
 })

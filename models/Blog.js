@@ -20,7 +20,10 @@ const BlogSchema = new mongoose.Schema({
     default: Date.now()
   },
   author: String,
-  youtubevideo: String
+  youtubevideo: {
+    type: String,
+    required: true
+  }
 })
 
 // Giving mongoose the schema to build the model
