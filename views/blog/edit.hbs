@@ -1,7 +1,7 @@
 <form action="/blog/{{id}}?_method=put" method="post">
-    <input type="text" name="title" placeholder="title">
-    <input style="height:200px;font-size:14pt;" type="text" name="writeup" placeholder="Write Up / Content">
-    <input type="text" name="Video" placeholder="Youtube Video">
+    <input type="text" name="title" value="{{title}}">
+    <input style="height:200px;font-size:14pt;" type="text" name="writeup" value="{{writeup}}">
+    <input type="text" name="youtubevideo" value="{{youtubevideo}}">
     <input type="submit" value="Save">
 </form>
 

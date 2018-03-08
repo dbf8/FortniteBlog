@@ -1,9 +1,39 @@
-{{#each blog}}
-<h1>{{title}}</h1>
-<p>{{writeup}}</p>
+{{!--
+<div class="callout small primary">
+    <div class="text-center">
+        <h1>Fortnite!</h1>
+    </div>
+</div> --}} {{#each blog}}
 
-<a href="/blog/edit/{{id}}">Edit</a>
-<form action="/blog/{{id}}?_method=delete" method="post">
-    <input type="submit" value="remove">
-</form>
+<article class="grid-container">
+    <div class="grid-x align-center">
+        <div class="cell medium-8">
+            <div class="blog-post">
+                <h3>
+                    <a href="/blog/{{id}}">{{title}}</a>
+                </h3>
+                <iframe width="550" height="315" src="https://www.youtube.com/embed/{{  youtubevideo }}" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen> </iframe>
+                <p>{{writeup}}</p>
+                <div class="callout">
+                    <ul class="menu simple">
+                        <li>
+                            <a href="#">{{author}}</a>
+                        </li>
+                        <li>
+                            <a href="/blog/edit/{{id}}" ; class="edit">Edit</a>
+                        </li>
+                        <li>
+                            <form action="/blog/{{id}}?_method=delete" method="post">
+                                <input type="submit" value="remove">
+                            </form>
+                        </li>
+                        <li>
+                            {{createdAt}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</article>
 {{/each}}

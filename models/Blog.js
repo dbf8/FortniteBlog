@@ -11,7 +11,6 @@ const BlogSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  video: String,
   createdAt: {
     type: Date,
     default: Date.now()
@@ -19,7 +18,9 @@ const BlogSchema = new mongoose.Schema({
   updatedAt: {
     type: Date,
     default: Date.now()
-  }
+  },
+  author: String,
+  youtubevideo: String
 })
 
 // Giving mongoose the schema to build the model
