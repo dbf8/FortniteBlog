@@ -1,19 +1,33 @@
-<div class="grid-x align-center">
-    <div class="cell medium-8">
-        <h1>{{title}}</h1>
-        <p>{{writeup}}</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{  youtubevideo }}" frameborder="0" allow="autoplay; encrypted-media"
-            allowfullscreen> </iframe>
-        <ul class="menu simple showpage">
-            <li>
-                <form action="/blog/edit/{{id}}" method="GET">
-                    <input type="submit" value="Edit"> </form>
-            </li>
-            <li>
-                <form onsubmit="return confirmDelete()" method="POST" action="/blog/{{id}}?_method=delete">
-                    <input type="submit" value="Remove">
-                </form>
-            </li>
-        </ul>
-    </div>
-</div>
+<article class="grid-container">
+    <div class="grid-x align-center">
+        <div class="cell medium-8">
+            <div class="blog-post">
+                <h3>
+                    {{title}}
+                </h3>
+
+                <p>{{writeup}}</p>
+                <iframe width="550" height="315" src="https://www.youtube.com/embed/{{  youtubevideo }}" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen> </iframe>
+                <div class="callout">
+                    <ul class="menu simple">
+                        <li>
+                            {{createdAt}}
+                        </li>
+                        <li>
+                            <a href="#">{{author}}</a>
+                        </li>
+                        <li>
+                            <form action="/blog/edit/{{id}}" method="GET">
+                                <input type="submit" value="Edit"> </form>
+                        </li>
+                        <li>
+                            <form onsubmit="return confirmDelete()" method="POST" action="/blog/{{id}}?_method=delete">
+                                <input type="submit" value="Remove">
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</article>
