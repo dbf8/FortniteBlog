@@ -10,41 +10,44 @@ const Blog = require('../models/Blog')
 // create new blog: '/'
 router.post('/', (req, res) => {
   Blog.create(req.body).then(blog => {
-    res.redirect(`/blog/${blog.id}`)
+    res.json(blog)
   })
 })
 
-// get new view for a new blog
-router.get('/new', (req, res) => {
-  res.render('blog/new')
-})
+// // get new view for a new blog
+// router.get('/new', (req, res) => {
+//   res.render('blog/new')
+// })
 
 // get a blog by it's id: '/:id'
-router.get('/:id', (req, res) => {
-  Blog.findOne({ _id: req.params.id }).then(blog => {
-    res.render('blog/show', blog)
-  })
-})
-// update a blog by id: '/:id'
-router.get('/edit/:id', (req, res) => {
-  Blog.findOne({ _id: req.params.id }).then(blog => {
-    res.render('blog/edit', blog)
-  })
-})
+// router.get('/:id', (req, res) => {
+//   Blog.findOne({ _id: req.params.id }).then(blog => {
+//     res.render('blog/show', blog)
+//   })
+// })
+// // update a blog by id: '/:id'
+// router.get('/edit/:id', (req, res) => {
+//   Blog.findOne({ _id: req.params.id }).then(blog => {
+//     res.json('blog/edit', blog)
+//   })
+// })
 
 router.put('/:id', (req, res) => {
   Blog.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }).then(
-    Blog => {
-      //this breaks when i make it /blog/${blog.id} and I have no idea why
-      res.redirect(`/`)
+    blog => {
+      Blog.find({}).then(blog => {
+        res.json(blog)
+      })
     }
   )
 })
 
 // delete a blog by id: '/:id'
 router.delete('/:id', (req, res) => {
-  Blog.findOneAndRemove({ _id: req.params.id }).then(() => {
-    res.redirect('/')
+  Blog.findOneAndRemove({ _id: req.params.id }).then(blog => {
+    Blog.find({}).then(blog => {
+      res.json(blog)
+    })
   })
 })
 
